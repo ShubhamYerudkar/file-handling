@@ -1,0 +1,15 @@
+def write_data(file="data.txt"):
+    roll_no = input("Enter your roll number: ")
+    name = input("Enter your name: ")
+    class_name = input("Enter your class: ")
+    file_object = open(file, "a")
+    file_object.writelines(roll_no + "\n")
+    file_object.writelines(name + "\n")
+    file_object.writelines(class_name + "\n")
+    file_object.close()
+    file_object = open(file, "r")
+    lines = file_object.readlines()
+    for line in lines:
+        print(line.strip())
+    file_object.close()
+write_data()
